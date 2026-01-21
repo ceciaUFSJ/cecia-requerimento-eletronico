@@ -430,9 +430,18 @@ async function carregarRequerimento() {
     h.className = "folder-header";
     h.innerHTML = `📁 ${pasta.name} <span>▼</span>`;
 
-    const c = document.createElement("div");
-    c.className = "folder-content";
-    c.style.display = "block";
+const c = document.createElement("div");
+c.className = "folder-content";
+
+/* ABRIR / FECHAR AO CLICAR */
+h.addEventListener("click", () => {
+  box.classList.toggle("open");
+
+  const seta = h.querySelector("span");
+  seta.textContent = box.classList.contains("open") ? "▲" : "▼";
+});
+
+    
 
     const arquivos = await driveApi(
       `'${pasta.id}' in parents and mimeType!='application/vnd.google-apps.folder'`
