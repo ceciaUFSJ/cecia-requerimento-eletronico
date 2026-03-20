@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Requerimento Eletrônico – CECIA</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -16,27 +17,13 @@
   --text: #222;
 }
 
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: "Inter", system-ui, Arial, sans-serif;
   background: #fff;
   color: var(--text);
 }
 
-/* =========================================================
-   HEADER MODERNO
-   ========================================================= */
-.header-link {
-  text-decoration: none;
-  color: inherit;
-}
-
+/* HEADER */
 .header {
   background: linear-gradient(135deg, var(--cecia-red-dark), var(--cecia-red));
   padding: 28px 0 18px;
@@ -51,7 +38,6 @@ body {
   align-items: center;
 }
 
-/* Grupo central (logos + título) */
 .header-group {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -60,32 +46,13 @@ body {
   margin-bottom: 18px;
 }
 
-/* Logos */
-.logo {
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
-
-.logo-ufsj {
-  height: 96px;
-}
-
-.logo-cecia {
-  height: 120px;
-}
-
-/* Texto */
-.title {
-  text-align: center;
-  max-width: 600px;
-}
+.logo-ufsj { height: 96px; }
+.logo-cecia { height: 120px; }
 
 .course {
   font-size: clamp(22px, 3vw, 34px);
   font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  background: linear-gradient(90deg, #ffffff, #dddddd);
+  background: linear-gradient(90deg, #fff, #ddd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -98,144 +65,54 @@ body {
   color: #f2f2f2;
 }
 
-/* Hover sutil */
-.header-link:hover .logo {
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   NAVEGAÇÃO DO HEADER
-   ========================================================= */
+/* NAV */
 .header-nav {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* matriz fixa */
+  grid-template-columns: repeat(5, 1fr);
   gap: 5px;
-  margin-top: 1px;
 }
 
 .header-nav a {
   height: 20px;
-  padding: 0px 2px;
-
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background-color: #8b1d1d;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  text-align: center;
-  line-height: 1.2;
-
-  font-size: 0.75rem;        /* ~30% menor que 1rem */
-  font-weight: 600;
-
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #8b1d1d;
-
-  border: none;             /* sem borda */
-  border-radius: 3px;       /* pode remover se quiser totalmente reto */
-
-  box-shadow: none;         /* garante ausência de contorno */
-  outline: none;
 }
+
 .header-nav a:hover {
   background-color: #a82424;
 }
 
-
-
-
-
-
-@media (max-width: 768px) {
-
-  /* ESCONDE AS LOGOS NO MOBILE */
-  .logo-ufsj,
-  .logo-cecia {
-    display: none;
-  }
-
-  /* Ajusta o layout para apenas o título */
-  .header-group {
-    grid-template-columns: 1fr;
-    row-gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  /* BOTÕES 2x MAIS ALTOS NO MOBILE */
-  .header-nav a {
-    height: 40px;
-    padding: 0 4px;
-  }
-
-  /* REDUZ A FONTE EM 10% NO MOBILE */
-  body {
-    font-size: 90%;
-  }
-
-  /* ESCONDE O TEXTO "UFSJ" NO MOBILE */
-  .ufsj {
-    display: none;
-  }
-  
-   .header-nav a {
-    font-size: 0.56rem;
-  }
-
-}
-
-
-
-/* =========================================================
-   CONTEÚDO INSTITUCIONAL
-   ========================================================= */
+/* MAIN */
 .main {
   max-width: 1100px;
   margin: 40px auto;
   padding: 0 24px;
-  font-size: 16px;
   line-height: 1.7;
 }
 
-.main h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.datas {
-  margin-bottom: 30px;
-}
-
-.datas ul {
-  margin: 10px 0 0 20px;
-}
-
-/* Aviso */
+/* AVISO */
 .aviso {
   background: #fff3cd;
   border: 1px solid #ffeeba;
   color: #856404;
   padding: 14px 18px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 30px;
   font-weight: 600;
   text-align: center;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin: 60px 0 30px;
-}
-
-/* ===== PASTAS DO DRIVE ===== */
+/* DRIVE */
 .folder {
   margin-bottom: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  overflow: hidden;
 }
 
 .folder-header {
@@ -243,217 +120,180 @@ body {
   padding: 10px 14px;
   font-weight: 600;
   cursor: pointer;
-  user-select: none;
-  transition: background 0.2s ease;
-}
-
-.folder-header:hover {
-  background: #ececec;
 }
 
 .folder-content {
-  display: none;         
+  display: none;
   padding: 10px 18px;
-  background: #fff;
 }
 
 .folder.open .folder-content {
-  display: block;        
+  display: block;
 }
 
-.file {
-  margin: 6px 0;
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 60px 0 30px;
 }
-
-
 </style>
 </head>
 
 <body>
 
+<header class="header">
+<div class="header-inner">
 
+<div class="header-group">
 
-
-
-  <header class="header">
-  <div class="header-inner">
-
-    <div class="header-group">
-
-<a href="https://cecia.ufsj.edu.br/" class="logo-link" aria-label="Página inicial da UFSJ">
-  <img
-    class="logo logo-ufsj"
-    src="https://raw.githubusercontent.com/ceciaUFSJ/gerador-planos/main/ufsjbco.png"
-    alt="Universidade Federal de São João del-Rei – UFSJ"
-    style="transform: scale(1.1); transform-origin: left center;"
-  >
+<a href="https://cecia.ufsj.edu.br/">
+<img class="logo logo-ufsj"
+src="https://raw.githubusercontent.com/ceciaUFSJ/gerador-planos/main/ufsjbco.png">
 </a>
 
-<div class="title">
-  <h1 class="course">Engenharia da Computação e Inteligência Artificial</h1>
-  <span class="ufsj">Universidade Federal de São João del-Rei – UFSJ</span>
+<div class="title text-center">
+<h1 class="course">Engenharia da Computação e Inteligência Artificial</h1>
+<span class="ufsj">Universidade Federal de São João del-Rei – UFSJ</span>
 </div>
 
-<a href="https://cecia.ufsj.edu.br/" class="logo-link" aria-label="Site do curso CECIA">
-  <img
-    class="logo logo-cecia"
-    src="https://raw.githubusercontent.com/ceciaUFSJ/gerador-planos/main/ceciabco.png"
-    alt="Curso de Engenharia da Computação e Inteligência Artificial – CECIA"
-  >
+<a href="https://cecia.ufsj.edu.br/">
+<img class="logo logo-cecia"
+src="https://raw.githubusercontent.com/ceciaUFSJ/gerador-planos/main/ceciabco.png">
 </a>
-      
 
-    </div>
+</div>
 
 <nav class="header-nav">
-  <a href="https://ceciaufsj.github.io/cecia-atividades-complementares/">Atividades Complementares</a>
-  <a href="https://ceciaufsj.github.io/cecia-extensao/">Atividades de Extensão</a>
-  <a href="https://ceciaufsj.github.io/cecia-colegiado/">Colegiado</a>
-  <a href="https://ceciaufsj.github.io/cecia-editais/">Editais</a>
-  <a href="https://ceciaufsj.github.io/cecia-ementas/">Ementas</a>
-  <a href="https://ceciaufsj.github.io/cecia-tabela-equivalencia/">Equivalência de Disciplinas</a>
-  <a href="https://ceciaufsj.github.io/cecia-estagio/">Estágio Curricular</a>
-  <a href="https://cecia.ufsj.edu.br/">Home</a>
-  <a href="https://ceciaufsj.github.io/cecia-horarios/">Horários e Salas</a>
-  <a href="https://ceciaufsj.github.io/cecia-inscricao-periodica/">Inscrição Periódica</a>
-  <a href="https://ceciaufsj.github.io/cecia-logos/">Logos</a>
-  <a href="https://ceciaufsj.github.io/cecia-modelos-planos/">Modelos de Planos de Ensino</a>
-  <a href="https://ceciaufsj.github.io/cecia-monitoria/">Monitoria</a>
-  <a href="https://ceciaufsj.github.io/cecia-nde/">NDE</a>
-  <a href="https://ceciaufsj.github.io/cecia-planos/">Planos de Ensino Aprovados</a>
-  <a href="https://ceciaufsj.github.io/cecia-projetopedagogico/">PPC</a>
-  <a href="https://ceciaufsj.github.io/cecia-requerimento-eletronico/#">Requerimento Eletrônico</a>
-  <a href="https://ceciaufsj.github.io/cecia-servidores/">Servidores do Curso</a>
-  <a href="https://ceciaufsj.github.io/cecia-tcc/">TCC</a>
-  <a href="https://ceciaufsj.github.io/cecia-transferencia/">Transferência de Alunos</a>
+<a href="https://cecia.ufsj.edu.br/">Home</a>
+<a href="https://ceciaufsj.github.io/cecia-monitoria/">Monitoria</a>
+<a href="https://ceciaufsj.github.io/cecia-tcc/">TCC</a>
+<a href="https://ceciaufsj.github.io/cecia-estagio/">Estágio</a>
+<a href="#">Requerimento</a>
 </nav>
 
-
-  </div>
+</div>
 </header>
 
 
-
-  
-  
 <div class="main">
-  
 
-<!-- ===== AVISO ===== -->
-<div style="
-  background:#fff3cd;
-  border:1px solid #ffeeba;
-  color:#856404;
-  padding:14px 18px;
-  border-radius:8px;
-  margin-bottom:30px;
-  font-weight:600;
-  text-align:center;
-">
+<div class="aviso">
 ⚠️ <strong>Em construção – sem valor legal</strong>
 </div>
 
-
-
-
-
-
-  <div class="container my-4">
 
 <p class="fw-bold" style="margin-bottom:1cm;">
 REQUERIMENTO ELETRÔNICO PARA ATENDIMENTO DE DEMANDAS DISCENTES – UTILIZAR EXCLUSIVAMENTE EMAIL INSTITUCIONAL PARA FORMALIZAÇÃO DA SOLICITAÇÃO
 </p>
 
+
 <div style="margin-bottom:1cm;">
 <p class="fw-semibold">
-1) Para ter acesso ao Requerimento Eletrônico (formulário online de demandas discentes) de seu curso:
+1) Para acessar o formulário eletrônico:
 ⇒ <a href="#">clique aqui</a>.
 </p>
 </div>
 
+
 <div style="margin-bottom:1cm;">
+
 <p class="fw-semibold">
-2) As solicitações deverão ser abertas para as modalidades abaixo:
+2) Modalidades disponíveis:
 </p>
 
 <ul>
-  <li>Abono de Faltas</li>
-  <li>Atestado de Frequência</li>
-  <li>Atividades Complementares - documentos</li>
-  <li>Atividades Extensionistas - documentos</li>
-  <li>Dispensa de Disciplina (a solicitação de Equivalência/Aproveitamento de Estudos é realizada em outro item)</li>
-  <li>Equivalência Interna entre Unidades Curriculares e/ou Aproveitamento de Estudos</li>
-  <li>Estágio e afins (solicitações diversas: apólice de seguro, carta de apresentação, inscrição, rematrícula, equiparação, encaminhamento de documentação para assinatura) - documentos de passo a passo</li>
-  <li>Inscrição em Trabalho de Conclusão de Curso (TCC) - documentos</li>
-  <li>Prorrogação do Prazo de Integralização do Curso</li>
-  <li>Recurso contra Decisão do Colegiado de curso</li>
-  <li>Requisição de Transporte (para Visita Técnica, Eventos e Outros)</li>
-  <li>Revisão de Avaliação e de Nota Final</li>
-  <li>Segunda Chamada de Avaliação</li>
-  <li>Tratamento Especial de Estudos</li>
-  <li>OUTROS - caso não esteja elencado nos itens relacionados acima</li>
+<li>Abono de Faltas</li>
+<li>Atestado de Frequência</li>
+<li>Atividades Complementares</li>
+<li>Atividades Extensionistas</li>
+<li>Dispensa de Disciplina</li>
+<li>Equivalência / Aproveitamento de Estudos</li>
+<li>Estágio e afins (apólice, carta, inscrição, etc.)</li>
+<li>Inscrição em TCC</li>
+<li>Prorrogação de Prazo de Integralização</li>
+<li>Recurso contra decisão do colegiado</li>
+<li>Requisição de Transporte</li>
+<li>Revisão de Avaliação</li>
+<li>Segunda Chamada</li>
+<li>Tratamento Especial de Estudos</li>
+<li>OUTROS</li>
 </ul>
 
-<p>
-Para cada uma das solicitações abertas, leia atentamente as instruções e anexem os documentos conforme orientado em cada item.
-</p>
 </div>
 
+
 <div style="margin-bottom:1cm;">
+
 <p class="fw-semibold">
-3) Modelo de documento (na pasta abaixo)
+3) Modelos de documentos
 </p>
 
 <ul class="list-group">
-  <li class="list-group-item">
-    <strong>Para pedido de prorrogação do prazo para integralização do curso</strong> – Plano de Estudo
-  </li>
-  <li class="list-group-item">
-    <strong>Para pedido de equivalência interna</strong> – Formulário de Equivalência
-  </li>
-  <li class="list-group-item">
-    <strong>Para pedido de aproveitamento de estudo</strong> – Formulário de Aproveitamento
-  </li>
+
+<li class="list-group-item">
+Plano de Estudo – Prorrogação de prazo
+</li>
+
+<li class="list-group-item">
+Formulário de Equivalência
+</li>
+
+<li class="list-group-item">
+Formulário de Aproveitamento
+</li>
+
 </ul>
+
 </div>
+
 
 <div style="margin-bottom:1cm;">
+
 <p class="fw-semibold">
-4) Email Institucional
+4) Email institucional
 </p>
 
 <p>
-Caso tenha alguma dificuldade com a utilização do email institucional, gentileza seguir as orientações do NTINF conforme o “GUIA para Criação de E-mails Institucionais para Discentes”.
+Caso tenha dificuldades com o email institucional, seguir orientações do NTINF.
 </p>
 
 <p>
-► Ainda assim, está com problemas com seu e-mail institucional?
-<a href="#">clique aqui</a>
-ou entre em contato com:
-<a href="mailto:centraldesuporte@ufsj.edu.br">centraldesuporte@ufsj.edu.br</a>
+<a href="mailto:centraldesuporte@ufsj.edu.br">
+centraldesuporte@ufsj.edu.br
+</a>
 </p>
+
 </div>
+
 
 <div style="margin-bottom:1cm;">
+
 <p class="fw-semibold">
-5) Deliberação do Colegiado
+5) Deliberação do colegiado
 </p>
 
 <p>
-A partir do primeiro semestre letivo de 2025, o Curso de Engenharia Química suspenderá, temporariamente, o aproveitamento de estudos de disciplinas cursadas em Educação a Distância (EaD).
+A partir do primeiro semestre letivo de 2026, o Curso de Engenharia da Computação e Inteligência Artificial suspenderá temporariamente o aproveitamento de disciplinas EaD até deliberação final do colegiado.
 </p>
+
 </div>
+
 
 <div style="margin-bottom:1cm;">
+
 <p class="fw-semibold">
-6) Em caso de dúvidas
+6) Contato
 </p>
 
 <p>
-Entrar em contato com:
-<a href="mailto:cecia@ufsj.edu.br">cecia@ufsj.edu.br</a>
+<a href="mailto:cecia@ufsj.edu.br">
+cecia@ufsj.edu.br
+</a>
 </p>
+
 </div>
+
 
 <div id="requerimento">
 Carregando documentos...
@@ -462,111 +302,99 @@ Carregando documentos...
 </div>
 
 
-
-  
-
-
-
-
-
-  
-
-
-
-
-  
-
-<!-- ================= REQUERIMENTO (GOOGLE DRIVE) ================= -->
 <script>
+
 const API_KEY = "AIzaSyACMK-L2y2-ZyJkwSkuu992Zug1dPFZgQM";
 const ROOT_FOLDER_REQ = "1fg7tvB2wR9KQ7pSdQldBkggou-sGw_vy";
 
-async function driveApi(q) {
-  const url =
-    `https://www.googleapis.com/drive/v3/files?q=${encodeURIComponent(q)}&fields=files(id,name,mimeType)&supportsAllDrives=true&includeItemsFromAllDrives=true&key=${API_KEY}`;
-  const r = await fetch(url);
-  return (await r.json()).files || [];
+async function driveApi(q){
+
+const url =
+`https://www.googleapis.com/drive/v3/files?q=${encodeURIComponent(q)}&fields=files(id,name,mimeType)&supportsAllDrives=true&includeItemsFromAllDrives=true&key=${API_KEY}`;
+
+const r = await fetch(url);
+
+return (await r.json()).files || [];
+
 }
 
-async function carregarRequerimento() {
-  const container = document.getElementById("requerimento");
-  container.innerHTML = "";
 
-  let pastas = await driveApi(
-    `'${ROOT_FOLDER_REQ}' in parents and mimeType='application/vnd.google-apps.folder'`
-  );
+async function carregarRequerimento(){
 
-  pastas.sort((a,b) =>
-    a.name.localeCompare(b.name, "pt-BR", { sensitivity: "base" })
-  );
+const container = document.getElementById("requerimento");
 
-  pastas.forEach(async (pasta) => {
-    const box = document.createElement("div");
-    box.className = "folder";
+container.innerHTML = "";
 
-    const h = document.createElement("div");
-    h.className = "folder-header";
-    h.innerHTML = `📁 ${pasta.name} <span>▼</span>`;
+const pastas = await driveApi(
+`'${ROOT_FOLDER_REQ}' in parents and mimeType='application/vnd.google-apps.folder'`
+);
 
-const c = document.createElement("div");
-c.className = "folder-content";
 
-/* ABRIR / FECHAR AO CLICAR */
-h.addEventListener("click", () => {
-  box.classList.toggle("open");
+for(const pasta of pastas){
 
-  const seta = h.querySelector("span");
-  seta.textContent = box.classList.contains("open") ? "▲" : "▼";
+const box = document.createElement("div");
+
+box.className="folder";
+
+
+const h=document.createElement("div");
+
+h.className="folder-header";
+
+h.innerHTML=`📁 ${pasta.name} <span>▼</span>`;
+
+
+const c=document.createElement("div");
+
+c.className="folder-content";
+
+
+h.onclick=()=>{
+
+box.classList.toggle("open");
+
+h.querySelector("span").textContent =
+box.classList.contains("open")?"▲":"▼";
+
+};
+
+
+const arquivos=await driveApi(
+`'${pasta.id}' in parents and mimeType!='application/vnd.google-apps.folder'`
+);
+
+
+arquivos.forEach(a=>{
+
+c.innerHTML+=
+`<div>📄
+<a target="_blank"
+href="https://drive.google.com/file/d/${a.id}/view">
+${a.name}
+</a></div>`;
+
 });
 
-    
 
-    const arquivos = await driveApi(
-      `'${pasta.id}' in parents and mimeType!='application/vnd.google-apps.folder'`
-    );
+box.appendChild(h);
 
-    arquivos
-      .sort((a,b)=>a.name.localeCompare(b.name,"pt-BR",{sensitivity:"base"}))
-      .forEach(a => {
-        c.innerHTML += `
-          <div class="file">
-            📄 <a target="_blank" href="https://drive.google.com/file/d/${a.id}/view">${a.name}</a>
-          </div>`;
-      });
+box.appendChild(c);
 
-    box.appendChild(h);
-    box.appendChild(c);
-    container.appendChild(box);
-  });
+container.appendChild(box);
+
+}
+
 }
 
 carregarRequerimento();
+
 </script>
 
-<!-- ================= DATA DE ATUALIZAÇÃO ================= -->
-<script>
-const DOC_DATA_ATUALIZACAO =
-  "https://docs.google.com/document/d/1EM5Bo0cqI1vKtGUmANPM7kxLyIcy7eMI/export?format=txt";
-
-async function carregarDataAtualizacao() {
-  try {
-    const res = await fetch(DOC_DATA_ATUALIZACAO);
-    let texto = (await res.text()).trim();
-    texto = texto.split(/\r?\n/).filter(l => l.trim()).join(" ");
-    document.getElementById("data-atualizacao").innerHTML =
-      "<strong>Última atualização:</strong> " + texto;
-  } catch {
-    document.getElementById("data-atualizacao").textContent =
-      "Última atualização: informação indisponível.";
-  }
-}
-
-carregarDataAtualizacao();
-</script>
 
 <div class="footer">
-  Página institucional mantida pela Coordenação do Curso – CECIA / UFSJ.<br>
-  <span id="data-atualizacao">Carregando data da última atualização...</span>
+
+Página institucional mantida pela Coordenação do Curso – CECIA / UFSJ.
+
 </div>
 
 </body>
